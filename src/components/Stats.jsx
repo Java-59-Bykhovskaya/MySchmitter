@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import Avatar from './Avatar.jsx';
+import { TwitterContext } from '../utils/context.jsx';
 
-const Stats = ({ user, stats, changeAvatar }) => {
+const Stats = () => {
+  const { user, stats } = useContext(TwitterContext);
+
   return (
     <div className={'user-stats'}>
       <div>
-        <Avatar user={user} changeAvatar={changeAvatar} />
+        <Avatar />
         {user.name}
       </div>
       <div className={'stats'}>
